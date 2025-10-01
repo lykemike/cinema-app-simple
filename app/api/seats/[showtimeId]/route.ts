@@ -3,12 +3,11 @@
 // METHOD: GET
 // PARAMS: showtimeId - The ID of the showtime
 
-// GET /api/seats/:showtimeId
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ showtimeId: string }> }
+  context: { params: Promise<{ showtimeId: string }> }
 ) {
-  const { showtimeId: showtimeIdParam } = await params;
+  const { showtimeId: showtimeIdParam } = await context.params;
   const showtimeId = parseInt(showtimeIdParam);
 
   // Mock data - map showtimes to their configurations
@@ -32,6 +31,11 @@ export async function GET(
       ],
     },
     5: { total: 30, booked: [5, 15] },
+    6: { total: 50, booked: [10, 20, 30] },
+    7: { total: 50, booked: [5, 15, 25, 35, 45] },
+    8: { total: 60, booked: [1, 2, 3, 4, 5] },
+    9: { total: 60, booked: [10, 20, 30, 40, 50, 11, 21, 31, 41, 51] },
+    10: { total: 60, booked: [25, 26] },
   };
 
   const config = showtimeConfig[showtimeId] || { total: 50, booked: [2, 5, 8] };

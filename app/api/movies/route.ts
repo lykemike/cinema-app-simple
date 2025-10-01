@@ -1,36 +1,44 @@
 // FILE: /app/api/movies/route.ts
-// PURPOSE: Fetches all available movies
+// PURPOSE: Fetches the list of available movies
 // METHOD: GET
 
-// GET /api/movies
 export async function GET() {
   const movies = [
     {
       id: 1,
-      title: "Dune: Part Two",
-      genre: "Sci-Fi",
-      duration: "166 min",
+      title: "The Last Voyage",
+      genre: "Sci-Fi Adventure",
+      duration: "2h 30m",
       rating: "PG-13",
-      poster: "🏜️",
+      poster: "🚀",
       price: 50000,
     },
     {
       id: 2,
-      title: "Oppenheimer",
-      genre: "Biography",
-      duration: "180 min",
+      title: "Shadows of Tomorrow",
+      genre: "Thriller",
+      duration: "1h 55m",
       rating: "R",
-      poster: "💣",
-      price: 50000,
+      poster: "🕵️",
+      price: 45000,
     },
     {
       id: 3,
-      title: "The Marvels",
-      genre: "Action",
-      duration: "105 min",
+      title: "Love in Paris",
+      genre: "Romance",
+      duration: "2h 10m",
+      rating: "PG",
+      poster: "💕",
+      price: 40000,
+    },
+    {
+      id: 4,
+      title: "Dragon Warrior",
+      genre: "Action Fantasy",
+      duration: "2h 45m",
       rating: "PG-13",
-      poster: "⚡",
-      price: 50000,
+      poster: "🐉",
+      price: 55000,
     },
   ];
 
