@@ -6,9 +6,10 @@
 // GET /api/seats/:showtimeId
 export async function GET(
   request: Request,
-  { params }: { params: { showtimeId: string } }
+  { params }: { params: Promise<{ showtimeId: string }> }
 ) {
-  const showtimeId = parseInt(params.showtimeId);
+  const { showtimeId: showtimeIdParam } = await params;
+  const showtimeId = parseInt(showtimeIdParam);
 
   // Mock data - map showtimes to their configurations
   const showtimeConfig: Record<number, { total: number; booked: number[] }> = {
